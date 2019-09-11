@@ -52,7 +52,7 @@ class App extends Component {
       const featureHash = feature + '-' + idx;
       const options = this.props.features[feature].map(item => {
         const itemHash = slugify(JSON.stringify(item));
-        <Const_features itemHash={itemHash} feature={feature} item={item} state={state} USCurrencyFormat={USCurrencyFormat}/>
+        return(<Const_features itemHash={itemHash} feature={feature} item={item} state={this.state} USCurrencyFormat={USCurrencyFormat}/>)
       });
 
       return (
@@ -68,7 +68,7 @@ class App extends Component {
     const summary = Object.keys(this.state.selected).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
       const selectedOption = this.state.selected[feature];
-      <Const_Summary featureHash={featureHash} feature={feature} selectedOption={selectedOption} USCurrencyFormat={USCurrencyFormat}/>
+      return(<Const_Summary featureHash={featureHash} feature={feature} selectedOption={selectedOption} USCurrencyFormat={USCurrencyFormat}/>)
       
     });
 
